@@ -1,0 +1,19 @@
+fastapi 
+uvicorn[standard] 
+# Database 
+sqlalchemy 
+pymysql 
+alembic 
+# Validation and configuration 
+pydantic 
+pydantic-settings 
+python-dotenv 
+# Authentication 
+python-jose[cryptography] 
+passlib[bcrypt] 
+python-multipart 
+# Background tasks 
+celery 
+redis 
+# HTTP / external services 
+httpx
