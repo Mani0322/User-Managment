@@ -1,4 +1,9 @@
 from pydantic_settings import BaseSettings,SettingsConfigDict
+from urllib.parse import quote_plus
+
+
+
+password = quote_plus("beinex@app")
 
 class Settings(BaseSettings):
     # App settings
@@ -12,7 +17,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES:int = 30
 
     # Database Settings
-    DATABASE_URL="mysql+pymysql://root:your_mysql_password@localhost:3306/user_management_db"
+    DATABASE_URL:str=f"mysql+pymysql://root:{password}@localhost:3306/micro_db"
 
     #CORS Settings
     CORS_ORGINS:list[str] = ["*"]

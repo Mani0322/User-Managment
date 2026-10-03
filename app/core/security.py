@@ -1,8 +1,11 @@
 from datetime import datetime,timedelta,timezone
+from urllib.parse import quote_plus
 from typing import Any
 from jose import jwt
 from passlib.context import CryptContext
 from app.core.config import settings
+
+password = quote_plus("beinex@123")
 
 
 pwd_context = CryptContext(schemes=["bcrypt"],deprecated="auto")
