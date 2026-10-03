@@ -22,6 +22,16 @@ class Settings(BaseSettings):
     #CORS Settings
     CORS_ORGINS:list[str] = ["*"]
 
+     # Celery / Redis Settings
+    REDIS_URL: str = "redis://localhost:6379/0"
+
+    # Email Settings
+    SMTP_HOST: str = "sandbox.smtp.mailtrap.io"
+    SMTP_PORT: int = 2525
+    SMTP_USER: str = "70a43966e302ed"
+    SMTP_PASSWORD: str = "b12af16ec5c683"
+    EMAIL_FROM: str = "noreply@user-management.local"
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
