@@ -26,6 +26,12 @@ def create_user(db:Session,data:UserCreate)->User:
     db.refresh(user)
     return user
 
+def authenticate_user(db: Session, email: str, password: str) -> Optional[User]:
+    user = get_user_by_email(db, email)
+    if not user or not verify_password(password, user.hashed_password):
+        return None
+    return user
+
 def update_user(db:Session,user:User,data:UserUpdate)->User:
     changes = data.model_dump(exclude_unset=True)
     if "password" in changes:
