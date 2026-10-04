@@ -25,3 +25,7 @@ class UserOut(BaseModel):
     is_active: bool
     is_superuser: bool
     created_at: Optional[datetime]
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
